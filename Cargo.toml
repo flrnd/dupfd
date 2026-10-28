@@ -8,3 +8,14 @@ blake3 = "1.8.7"
 
 [dev-dependencies]
 tempfile = "3"
+
+[profile.dev]
+opt-level = 0
+debug = true
+overflow-checks = true
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = "debuginfo"
